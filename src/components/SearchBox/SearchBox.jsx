@@ -1,7 +1,7 @@
 import { useId } from "react";
 import css from "./SearchBox.module.css";
 import { useDispatch } from "react-redux";
-import { filterContacts } from "../../redux/filtersSlice";
+import { filterByContactsName } from "../../redux/filters/filtersSlice";
 
 const SearchBox = () => {
   const searchId = useId();
@@ -13,7 +13,7 @@ const SearchBox = () => {
       <input
         type="text"
         id={searchId}
-        onChange={(event) => dispatch(filterContacts(event.target.value))}
+        onChange={(event) => dispatch(filterByContactsName(event.target.value))}
       />
     </div>
   );
