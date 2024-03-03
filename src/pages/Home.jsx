@@ -20,7 +20,7 @@ export default function Home() {
       <DocumentTitle>Home</DocumentTitle>
       <div style={styles.container}>
         <h1 style={styles.title}>
-          Contacts book welcome page{" "}
+          PhoneBook welcome page{" "}
           <span role="img" aria-label="Greeting icon">
             💁‍♀️
           </span>
