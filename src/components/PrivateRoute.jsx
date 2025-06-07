@@ -12,3 +12,9 @@ export const PrivateRoute = ({ component: Component, redirectTo = "/" }) => {
 
   return shouldRedirect ? <Navigate to={redirectTo} /> : Component;
 };
+
+// export const PrivateRoute = ({ children }) => {
+//   const { isLoggedIn, isRefreshing } = useAuth();
+//   if (isRefreshing) return <Spinner />;
+//   return isLoggedIn ? children : <Navigate to="/login" />;
+// };

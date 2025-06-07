@@ -17,10 +17,10 @@ const styles = {
 export default function Home() {
   return (
     <>
-      <DocumentTitle>Home</DocumentTitle>
+      <DocumentTitle>Home • Contact Book</DocumentTitle>
       <div style={styles.container}>
         <h1 style={styles.title}>
-          PhoneBook welcome page{" "}
+          Welcome to Contact Book{" "}
           <span role="img" aria-label="Greeting icon">
             💁‍♀️
           </span>

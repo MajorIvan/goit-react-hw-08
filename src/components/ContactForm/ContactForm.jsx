@@ -29,7 +29,7 @@ export default function ContactForm() {
       }}
       validationSchema={userSchema}
       onSubmit={(values, actions) => {
-        dispatch(addContact({ name: values.name, phone: values.number }));
+        dispatch(addContact({ name: values.name, number: values.number }));
         actions.resetForm();
       }}
     >

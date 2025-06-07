@@ -17,7 +17,7 @@ export default function Contacts() {
 
   return (
     <>
-      <DocumentTitle>Your contacts</DocumentTitle>
+      <DocumentTitle>Contacts • Contact Book</DocumentTitle>
       <ContactForm />
       <SearchBox />
       <div>{isLoading && "Request in progress..."}</div>
