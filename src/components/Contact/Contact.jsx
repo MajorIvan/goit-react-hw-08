@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { deleteContact, updateContact } from "../../redux/contacts/operations";
 import { DeleteConfirm } from "../DeleteConfirm/DeleteConfirm";
 import css from "./Contact.module.css";
+import { TextField, Button } from "@mui/material";
 
 export default function Contact({ contact: { id, name, number } }) {
   const dispatch = useDispatch();
@@ -25,10 +26,20 @@ export default function Contact({ contact: { id, name, number } }) {
     setIsEditing(false);
   };
 
+  // const handleUpdate = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     await dispatch(updateContact({ id, ...values })).unwrap();
+  //     setIsEditing(false);
+  //   } catch (error) {
+  //     console.error("Error updating contact:", error);
+  //   }
+  // };
+
   if (isEditing) {
     return (
       <li className={css.item}>
-        <form onSubmit={handleUpdate} className={css.form}>
+        {/* <form onSubmit={handleUpdate} className={css.form}>
           <input
             name="name"
             value={values.name}
@@ -41,13 +52,42 @@ export default function Contact({ contact: { id, name, number } }) {
             onChange={handleChange}
             required
           />
+        </form> */}
+        <form onSubmit={handleUpdate} className={css.confirm}>
+          <div className={css.editLeft}>
+            <TextField
+              label="Name"
+              variant="outlined"
+              name="name"
+              value={values.name}
+              onChange={handleChange}
+              size="small"
+              required
+            />
+            <TextField
+              label="Number"
+              variant="outlined"
+              name="number"
+              value={values.number}
+              onChange={handleChange}
+              size="small"
+              required
+            />
+          </div>
+          <div className={css.editRight}>
+            <Button variant="contained" color="primary" type="submit">
+              Save
+            </Button>
+            <Button
+              variant="outlined"
+              color="secondary"
+              type="button"
+              onClick={() => setIsEditing(false)}
+            >
+              Cancel
+            </Button>
+          </div>
         </form>
-        <div className={css.confirm}>
-          <button type="submit">Save</button>
-          <button type="button" onClick={() => setIsEditing(false)}>
-            Cancel
-          </button>
-        </div>
       </li>
     );
   }
@@ -58,8 +98,20 @@ export default function Contact({ contact: { id, name, number } }) {
         <p>{number}</p>
       </div>
       <div className={css.edit}>
-        <button onClick={() => setIsEditing(true)}>Amend</button>
-        <button onClick={() => setConfirmOpen(true)}>Delete</button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => setIsEditing(true)}
+        >
+          Amend
+        </Button>
+        <Button
+          variant="outlined"
+          color="secondary"
+          onClick={() => setConfirmOpen(true)}
+        >
+          Delete
+        </Button>
       </div>
 
       <DeleteConfirm
