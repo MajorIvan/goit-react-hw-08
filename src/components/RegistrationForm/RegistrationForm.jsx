@@ -28,44 +28,55 @@ export const RegistrationForm = () => {
         Username
         <input type="text" name="name" />
       </label> */}
-      <TextField
-        className={css.label}
-        label="Username"
-        variant="outlined"
-        type="text"
-        name="name"
-        size="small"
-        required
-      />
-      {/* <label className={css.label}>
+      <div className={css.formGroup}>
+        <TextField
+          className={css.label}
+          label="Username"
+          variant="outlined"
+          type="text"
+          name="name"
+          size="small"
+          required
+          sx={{
+            mb: 2,
+          }}
+        />
+        {/* <label className={css.label}>
         Email
         <input type="email" name="email" />
       </label> */}
-      <TextField
-        className={css.label}
-        label="Email"
-        variant="outlined"
-        type="email"
-        name="email"
-        size="small"
-        required
-      />
-      {/* <label className={css.label}>
+        <TextField
+          className={css.label}
+          label="Email"
+          variant="outlined"
+          type="email"
+          name="email"
+          size="small"
+          required
+          sx={{
+            mb: 2,
+          }}
+        />
+        {/* <label className={css.label}>
         Password
         <input type="password" name="password" />
       </label> */}
-      <TextField
-        className={css.label}
-        label="Password"
-        variant="outlined"
-        type="password"
-        name="password"
-        size="small"
-        required
-      />
-      <Button variant="contained" color="primary" type="submit">
-        Register
-      </Button>
+        <TextField
+          className={css.label}
+          label="Password"
+          variant="outlined"
+          type="password"
+          name="password"
+          size="small"
+          required
+          sx={{
+            mb: 2,
+          }}
+        />
+        <Button variant="contained" color="primary" type="submit">
+          Register
+        </Button>
+      </div>
     </form>
   );
 };

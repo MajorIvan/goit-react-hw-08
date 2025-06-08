@@ -34,31 +34,39 @@ export const LoginForm = () => {
         Email
         <input type="email" name="email" />
       </label> */}
-      <TextField
-        className={css.label}
-        label="Email"
-        variant="outlined"
-        type="email"
-        name="email"
-        size="small"
-        required
-      />
-      {/* <label className={css.label}>
+      <div className={css.formGroup}>
+        <TextField
+          className={css.label}
+          label="Email"
+          variant="outlined"
+          type="email"
+          name="email"
+          size="small"
+          required
+          sx={{
+            mb: 2,
+          }}
+        />
+        {/* <label className={css.label}>
         Password
         <input type="password" name="password" />
       </label> */}
-      <TextField
-        className={css.label}
-        label="Password"
-        variant="outlined"
-        type="password"
-        name="password"
-        size="small"
-        required
-      />
-      <Button variant="contained" color="primary" type="submit">
-        Log In
-      </Button>
+        <TextField
+          className={css.label}
+          label="Password"
+          variant="outlined"
+          type="password"
+          name="password"
+          size="small"
+          required
+          sx={{
+            mb: 2,
+          }}
+        />
+        <Button variant="contained" color="primary" type="submit">
+          Log In
+        </Button>
+      </div>
     </form>
   );
 };

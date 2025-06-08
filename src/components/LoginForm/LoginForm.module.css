@@ -5,5 +5,9 @@
 .label {
   display: flex;
   flex-direction: column;
-  margin-bottom: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
 }
