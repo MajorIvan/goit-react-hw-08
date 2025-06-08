@@ -1,5 +1,5 @@
 .item {
-  width: 230px;
+  width: 278px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,4 +11,24 @@
 
 .item p {
   margin: 0;
+}
+
+.txt,
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  flex-direction: column;
+}
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }

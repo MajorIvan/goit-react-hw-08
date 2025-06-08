@@ -41,22 +41,26 @@ export default function Contact({ contact: { id, name, number } }) {
             onChange={handleChange}
             required
           />
+        </form>
+        <div className={css.confirm}>
           <button type="submit">Save</button>
           <button type="button" onClick={() => setIsEditing(false)}>
             Cancel
           </button>
-        </form>
+        </div>
       </li>
     );
   }
   return (
     <li className={css.item}>
-      <div>
+      <div className={css.txt}>
         <p>{name}</p>
         <p>{number}</p>
       </div>
-      <button onClick={() => setIsEditing(true)}>Amend</button>
-      <button onClick={() => setConfirmOpen(true)}>Delete</button>
+      <div className={css.edit}>
+        <button onClick={() => setIsEditing(true)}>Amend</button>
+        <button onClick={() => setConfirmOpen(true)}>Delete</button>
+      </div>
 
       <DeleteConfirm
         open={confirmOpen}
